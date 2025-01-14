@@ -22,6 +22,10 @@ jobs:
       - name: Build and package with Maven
         run: mvn clean package
 
+      # NEW STEP: Install Vercel CLI
+      - name: Install Vercel CLI
+        run: npm install --global vercel
+
       - name: Deploy to Vercel
         run: vercel --prod --yes
         env:
